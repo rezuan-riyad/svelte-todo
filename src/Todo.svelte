@@ -11,8 +11,8 @@
 
 <div class="display-card">
     <div class="des-section">
-        <input type="checkbox" checked={todo.done} />
-        <h5>{todo.title}</h5>
+        <input type="checkbox" bind:checked={todo.done} />
+        <h5 class={todo.done ? "done-todo" : "undone-todo"}>{todo.title}</h5>
     </div>
     <button class="close-btn" on:click={() => onDelete(todo.id)}>X</button>
 </div>
@@ -38,5 +38,9 @@
         color: red;
         cursor: pointer;
         padding: 1rem;
+    }
+    .done-todo{
+        color: gray;
+        text-decoration: line-through;
     }
 </style>
